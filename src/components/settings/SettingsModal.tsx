@@ -166,14 +166,14 @@ export function SettingsModal({
               <button
                 type="button"
                 onClick={() => {
-                  if (confirm('Generate realistic 100-application dataset for high-capacity testing?')) {
+                  if (confirm('Load standard 20-application enterprise dataset?')) {
                     onPopulateFullRoster();
                     onClose();
                   }
                 }}
                 className="px-3 py-1.5 rounded-md text-xs font-semibold text-indigo-300 bg-indigo-950/60 hover:bg-indigo-900/60 border border-indigo-800/60 transition-colors cursor-pointer"
               >
-                Fill Register to 100 Apps
+                Load Standard 20 Applications
               </button>
 
               <button

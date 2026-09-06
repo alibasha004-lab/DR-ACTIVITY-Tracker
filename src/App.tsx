@@ -27,9 +27,9 @@ import { CsvImportModal } from './components/modals/CsvImportModal';
 import { ImagePreviewModal } from './components/modals/ImagePreviewModal';
 import { CheckCircle2, ShieldCheck, Zap, Plus } from 'lucide-react';
 
-const STORAGE_KEY_APPS = 'dr_portal_apps_v2';
-const STORAGE_KEY_EXERCISE = 'dr_portal_exercise_v2';
-const STORAGE_KEY_SETTINGS = 'dr_portal_settings_v2';
+const STORAGE_KEY_APPS = 'dr_portal_apps_v3';
+const STORAGE_KEY_EXERCISE = 'dr_portal_exercise_v3';
+const STORAGE_KEY_SETTINGS = 'dr_portal_settings_v3';
 
 export function App() {
   // 1. Applications State with LocalStorage
@@ -43,7 +43,7 @@ export function App() {
     } catch (e) {
       console.error('Error loading applications from localStorage', e);
     }
-    return generateFull100ApplicationsRoster();
+    return generateFull100ApplicationsRoster(20);
   });
 
   // 2. DR Exercise Config State
@@ -217,20 +217,20 @@ export function App() {
   };
 
   const handlePopulateFullRoster = () => {
-    const full100 = generateFull100ApplicationsRoster();
-    setApplications(full100);
-    showToast(`Generated full 100-application enterprise dataset.`);
+    const roster20 = generateFull100ApplicationsRoster(20);
+    setApplications(roster20);
+    showToast(`Loaded 20-application enterprise dataset.`);
   };
 
   const handleResetAllData = () => {
-    const full = generateFull100ApplicationsRoster();
-    setApplications(full);
+    const roster20 = generateFull100ApplicationsRoster(20);
+    setApplications(roster20);
     setExerciseConfig(DEFAULT_EXERCISE_CONFIG);
     setSettings(DEFAULT_SETTINGS);
     localStorage.removeItem(STORAGE_KEY_APPS);
     localStorage.removeItem(STORAGE_KEY_EXERCISE);
     localStorage.removeItem(STORAGE_KEY_SETTINGS);
-    showToast('Reset all portal records to default demo drill.');
+    showToast('Reset all portal records to default 20-application drill.');
   };
 
   const handlePreviewImage = (title: string, dataUrl: string) => {

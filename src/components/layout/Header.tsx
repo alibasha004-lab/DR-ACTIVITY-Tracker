@@ -94,19 +94,6 @@ export function Header({
               </div>
             </div>
 
-            {/* Scale Testing Generator (if <= 20 apps) */}
-            {applications.length <= 20 && (
-              <button
-                type="button"
-                onClick={onGenerateRoster}
-                className="hidden lg:inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-semibold text-indigo-300 bg-indigo-950/50 border border-indigo-800/60 hover:bg-indigo-900/60 transition-colors shadow-xs cursor-pointer"
-                title="Populate up to 100 sample applications to test large scale drill"
-              >
-                <Sparkles className="w-3.5 h-3.5 text-indigo-400" />
-                <span>Fill 100 Apps</span>
-              </button>
-            )}
-
             {/* Quick DR Recorder Button */}
             <button
               type="button"

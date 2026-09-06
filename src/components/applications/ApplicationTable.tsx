@@ -248,15 +248,15 @@ export function ApplicationTable({
               <span className="hidden sm:inline">Import CSV</span>
             </button>
 
-            {applications.length < 50 && (
+            {applications.length === 0 && (
               <button
                 type="button"
                 onClick={onGenerateRoster}
                 className="inline-flex items-center gap-1.5 px-3 py-2 rounded-md text-xs font-semibold text-indigo-300 bg-indigo-950/60 hover:bg-indigo-900/60 border border-indigo-800/60 transition-colors shadow-xs cursor-pointer"
-                title="Populate test roster with up to 100 applications"
+                title="Populate test roster with 20 default applications"
               >
                 <Sparkles className="w-3.5 h-3.5 text-indigo-400" />
-                <span className="hidden sm:inline">Fill 100 Apps</span>
+                <span className="hidden sm:inline">Load Sample (20 Apps)</span>
               </button>
             )}
           </div>
